@@ -1,0 +1,51 @@
+<h2> User Summary </h2>
+<table class="table" *ngIf="existingUser && newUser">
+  <thead>
+  <tr>
+    <th scope="col">Details</th>
+    <th scope="col">Existing User Value</th>
+    <th scope="col">New User Value</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>Name</td>
+    <td>{{existingUser.name}}</td>
+    <td>{{newUser.name}}</td>
+  </tr>
+  <tr>
+    <td>User Name</td>
+    <td>{{existingUser.username}}</td>
+    <td>{{newUser.username}}</td>
+  </tr>
+  <tr>
+    <td>E-mail</td>
+    <td>{{existingUser.email}}</td>
+    <td>{{newUser.email}}</td>
+  </tr>
+  <tr>
+    <td>Address</td>
+    <td>{{existingUser.address?.suite}} {{existingUser.address?.street}} {{existingUser.address?.city}} {{existingUser.address?.zipcode}}</td>
+    <td>{{newUser.address?.suite}} {{newUser.address?.street}} {{newUser.address?.city}} {{newUser.address?.zipcode}}</td>
+  </tr>
+  <tr>
+    <td>Phone</td>
+    <td>{{existingUser.phone}}</td>
+    <td>{{newUser.phone}}</td>
+  </tr>
+  <tr>
+    <td>Website</td>
+    <td>{{existingUser.website}}</td>
+    <td>{{newUser.website}}</td>
+  </tr>
+  <tr>
+    <td>Company</td>
+    <td>{{existingUser.company?.name}}</td>
+    <td>{{newUser.company?.name}}</td>
+  </tr>
+  </tbody>
+</table>
+<div class="row">
+  <button class="mt-3 btn btn-secondary" (click)="cancel()">Cancel</button>
+  <button class="mt-3 btn btn-primary" (click)="confirm()">Confirm</button>
+</div>
